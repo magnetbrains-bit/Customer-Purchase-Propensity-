@@ -1,0 +1,133 @@
+# 📊 Model Evaluation Visualizations
+
+This folder contains comprehensive visualizations and evaluation metrics for the Customer Propensity Analysis model.
+
+## 🎯 Overview
+
+The Customer Propensity Analysis model achieved **98.20% accuracy** with **0.9890 ROC AUC** score. These visualizations provide detailed insights into model performance, feature importance, and classification behavior.
+
+## 📈 Visualization Files
+
+### 1. **confusion_matrix.png**
+- **Purpose**: Shows model's prediction accuracy across all classes
+- **What to Look For**: 
+  - High values on diagonal (True Positives & True Negatives)
+  - Low values off diagonal (False Positives & False Negatives)
+- **Key Metrics**: Accuracy, Precision, Recall, F1-Score
+
+### 2. **roc_curve.png**
+- **Purpose**: Demonstrates model's ability to distinguish between classes
+- **What to Look For**: 
+  - Curve should be close to top-left corner
+  - Higher AUC = Better performance
+- **Key Metric**: ROC AUC = 0.9890 (Excellent: >0.95)
+
+### 3. **precision_recall.png**
+- **Purpose**: Shows precision vs recall trade-off for different thresholds
+- **What to Look For**: 
+  - Higher curve = Better performance
+  - Area under curve indicates overall performance
+- **Key Metric**: Average Precision score
+
+### 4. **feature_importance.png**
+- **Purpose**: Ranks features by their contribution to predictions
+- **What to Look For**: 
+  - Longer bars = More important features
+  - Helps identify key behavioral indicators
+- **Business Insight**: Which customer behaviors most predict purchase likelihood
+
+### 5. **threshold_analysis.png**
+- **Purpose**: Shows how model performance changes with different classification thresholds
+- **What to Look For**: 
+  - Optimal threshold for your business needs
+  - Trade-offs between precision and recall
+- **4 Subplots**: Precision, Recall, F1-Score, and Accuracy vs Threshold
+
+### 6. **class_distribution.png**
+- **Purpose**: Visualizes the target variable distribution
+- **What to Look For**: 
+  - Severe class imbalance (119:1 ratio)
+  - Justifies the need for scale_pos_weight parameter
+- **2 Views**: Count plot and percentage pie chart
+
+### 7. **correlation_heatmap.png**
+- **Purpose**: Shows relationships between different features
+- **What to Look For**: 
+  - High correlations (potential redundancy)
+  - Low correlations (good feature diversity)
+- **Business Insight**: Understanding feature relationships
+
+## 🔍 How to Interpret
+
+### **Excellent Performance Indicators** ✅
+- **Accuracy > 95%**: Model correctly classifies most cases
+- **ROC AUC > 0.95**: Excellent discrimination ability
+- **High Recall**: Captures most actual purchasers
+- **Balanced Precision/Recall**: Good trade-off
+
+### **Class Imbalance Context** ⚠️
+- **119:1 Ratio**: Very few purchasers vs non-purchasers
+- **Scale_pos_weight**: XGBoost parameter handles imbalance
+- **No SMOTE Needed**: Built-in class weight handling sufficient
+
+### **Feature Insights** 💡
+- **View Count**: Most important predictor
+- **Add-to-Cart Rate**: Strong conversion indicator
+- **Session Behavior**: Engagement patterns matter
+- **Recency**: Recent activity predicts purchase
+
+## 🚀 Usage
+
+### **For Business Stakeholders**
+- Use **confusion_matrix.png** for overall performance summary
+- Use **feature_importance.png** to understand key drivers
+- Use **roc_curve.png** to demonstrate model quality
+
+### **For Data Scientists**
+- Use **threshold_analysis.png** for model tuning
+- Use **correlation_heatmap.png** for feature engineering
+- Use **precision_recall.png** for detailed performance analysis
+
+### **For Presentations**
+- **confusion_matrix.png**: Executive summary
+- **roc_curve.png**: Technical performance
+- **feature_importance.png**: Business insights
+
+## 📊 Model Performance Summary
+
+| Metric | Value | Status |
+|--------|-------|--------|
+| **Accuracy** | 98.20% | 🟢 Excellent |
+| **ROC AUC** | 0.9890 | 🟢 Excellent |
+| **Precision** | 30.14% | 🟡 Good (class 1) |
+| **Recall** | 93.52% | 🟢 Excellent (class 1) |
+| **F1-Score** | 0.46 | 🟡 Good (class 1) |
+
+## 🔧 Technical Notes
+
+- **Model**: XGBoost with hyperparameter tuning
+- **Class Imbalance**: Handled with scale_pos_weight parameter
+- **Features**: 7 behavioral metrics
+- **Dataset**: 1.4M+ visitors, 2.7M+ events
+- **Resolution**: All plots saved at 300 DPI for high quality
+
+## 📁 File Organization
+
+```
+visualizations/
+├── README.md                    # This file
+├── confusion_matrix.png         # Model accuracy visualization
+├── roc_curve.png               # ROC curve with AUC score
+├── precision_recall.png         # Precision-recall analysis
+├── feature_importance.png       # Feature ranking
+├── threshold_analysis.png       # Threshold optimization
+├── class_distribution.png       # Target variable analysis
+└── correlation_heatmap.png      # Feature relationships
+```
+
+---
+
+**Generated by**: `model_evaluation.py`  
+**Model**: Customer Propensity Analysis XGBoost  
+**Date**: 2025  
+**Performance**: 98.20% Accuracy, 0.9890 ROC AUC
