@@ -36,7 +36,7 @@ venv/
 
 # Large or generated data (keep model/data out of git if desired)
 visitor_df_final.csv
-data/*.csv
+#data/*.csv
 
 # Streamlit
 .streamlit/secrets.toml
