@@ -2,6 +2,8 @@
 
 A comprehensive machine learning system that predicts customer purchase likelihood based on behavioral patterns and interaction data. This project combines advanced ML techniques with an interactive web dashboard for real-time customer analysis.
 
+App link : https://22ckwyowfninwg3rnlahjs.streamlit.app/
+
 ## 📊 Project Overview
 
 **Customer Propensity Analysis** is an end-to-end solution that:
