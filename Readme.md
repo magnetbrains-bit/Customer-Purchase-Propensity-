@@ -4,6 +4,11 @@ A comprehensive machine learning system that predicts customer purchase likeliho
 
 App link : https://22ckwyowfninwg3rnlahjs.streamlit.app/
 
+<img width="1828" height="900" alt="Screenshot 2025-09-05 163750" src="https://github.com/user-attachments/assets/fab39a1d-0c90-4f87-bad7-e2f9ff2aa1a8" />
+<img width="1855" height="904" alt="Screenshot 2025-09-05 163916" src="https://github.com/user-attachments/assets/9dee3a19-36f4-4d09-ba18-2be66c9f62b8" />
+
+
+
 ## 📊 Project Overview
 
 **Customer Propensity Analysis** is an end-to-end solution that:
